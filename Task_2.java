@@ -51,11 +51,11 @@ public class Task_2 {
         for (int i = 0; i < n_produkts; i++) {            
             System.out.printf("Какую %de строку (от 0 до %d): ", i, produkts.length-1);
             index_produkts[i] = Integer.parseInt(sc.nextLine());
-            // System.out.println(produkts[ni]);        
         }
 
         for (int i = 0; i < index_produkts.length; i++) {
             System.out.println(produkts[index_produkts[i]]);
+            
         }
 
         for (int i = 0; i < index_recept.length; i++) {
