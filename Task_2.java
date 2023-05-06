@@ -26,7 +26,7 @@ import java.util.Scanner;
 
 public class Task_2 {
     public static void main(String[] args) {
-        String [] recept = {"Арахис 100гр, мороженое 200гр. Возьмите арахис и измелчите его. Посыпьте измельчённый арахис на мороженое.", 
+        /*String [] recept = {"Арахис 100гр, мороженое 200гр. Возьмите арахис и измелчите его. Посыпьте измельчённый арахис на мороженое.", 
                             "Клубника 100гр, сгущенка 3кг. Смешать, есть) Радоваться жизни.",
                             "Вода 100мл, Пиво 500мл. Смешать, выпить и забыться до утра)"};
         String [] produkts = {"арахис - колбаса", "клубника - вишня", "сгущенка - молоко", "вода - водка"};
@@ -62,6 +62,39 @@ public class Task_2 {
             String new_recept = recept[index_recept[i]];
             System.out.println(new_recept);
         }
-        sc.close();
+        sc.close();*/
+        int n =2;
+        String [] n_arr = new String[n];
+        n_arr[0] = "Рецепт 1. Арахис 100гр, мороженое 200гр. Возьмите арахис и измелчите его. Посыпьте измельчённый арахис на мороженое.";
+        n_arr[1]= "Рецепт 2. Клубника 100гр, сгущенка 3кг. Смешать, есть) Радоваться жизни.";
+        int m =3;
+        String [] m_arr = new String[m];
+        m_arr[0] = "арахис - колбаса";
+        m_arr[1] = "клубника - вишня";
+        m_arr[2] = "сгущенка - молоко";
+
+        change_book(n_arr, m_arr);
+
+        for (String i: n_arr) {
+            System.out.println(i);
+        }
+    }
+    public static void change_book(String[]arrN, String[]arrM){
+        for( int i =0; i< arrN.length; i++){
+            for(String m: arrM){
+                arrN[i] =change_record(arrN[i],m);
+
+            }
+        }
+    }
+    public static String change_record(String n, String m){
+        String [] m_record = m.split(" - ");
+            n = n.replace(m_record[0],m_record[1]);
+            n = n.replace(cap_letter(m_record[0]), cap_letter(m_record[1]) );
+        return n;
+    }
+    public static String cap_letter(String change_word){
+        change_word = change_word.substring(0, 1).toUpperCase() + change_word.substring(1);
+        return change_word;
     }
 }
